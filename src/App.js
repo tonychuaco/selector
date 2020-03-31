@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import Shape from './shape';
+import React, { Component } from "react";
+import Shape from "./shape";
 
 class Selector extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -27,7 +26,7 @@ class Selector extends Component {
       triangle_right: false,
       trapezium: false,
       star: false,
-    }
+    };
   }
 
   // this is where our methods live
@@ -35,15 +34,42 @@ class Selector extends Component {
   selectShape = (shapeName) => {
     this.setState({
       selectedShape: shapeName,
-      circleClicks: (shapeName === "circle") ? this.state.circleClicks + 1: this.state.circleClicks,
-      squareClicks: (shapeName === "square") ? this.state.squareClicks + 1 : this.state.squareClicks,
-      ovalClicks: (shapeName === "oval") ? this.state.ovalClicks + 1 : this.state.ovalClicks,
-      triangleClicks: (shapeName === "triangle") ? this.state.triangleClicks + 1 : this.state.triangleClicks,
-      triangle_downClicks: (shapeName === "triangle_down") ? this.state.triangle_downClicks + 1 : this.state.triangle_downClicks,
-      triangle_leftClicks: (shapeName === "triangle_left") ? this.state.triangle_leftClicks + 1 : this.state.triangle_leftClicks,
-      triangle_rightClicks: (shapeName === "triangle_right") ? this.state.triangle_rightClicks + 1 : this.state.triangle_rightClicks,
-      trapeziumClicks: (shapeName === "trapezium") ? this.state.trapeziumClicks + 1 : this.state.trapeziumClicks,
-      starClicks: (shapeName === "star") ? this.state.starClicks + 1 : this.state.starClicks,
+      circleClicks:
+        shapeName === "circle"
+          ? this.state.circleClicks + 1
+          : this.state.circleClicks,
+      squareClicks:
+        shapeName === "square"
+          ? this.state.squareClicks + 1
+          : this.state.squareClicks,
+      ovalClicks:
+        shapeName === "oval"
+          ? this.state.ovalClicks + 1
+          : this.state.ovalClicks,
+      triangleClicks:
+        shapeName === "triangle"
+          ? this.state.triangleClicks + 1
+          : this.state.triangleClicks,
+      triangle_downClicks:
+        shapeName === "triangle_down"
+          ? this.state.triangle_downClicks + 1
+          : this.state.triangle_downClicks,
+      triangle_leftClicks:
+        shapeName === "triangle_left"
+          ? this.state.triangle_leftClicks + 1
+          : this.state.triangle_leftClicks,
+      triangle_rightClicks:
+        shapeName === "triangle_right"
+          ? this.state.triangle_rightClicks + 1
+          : this.state.triangle_rightClicks,
+      trapeziumClicks:
+        shapeName === "trapezium"
+          ? this.state.trapeziumClicks + 1
+          : this.state.trapeziumClicks,
+      starClicks:
+        shapeName === "star"
+          ? this.state.starClicks + 1
+          : this.state.starClicks,
       // circle: (shapeName === "circle") ? true : false,
       // square: (shapeName === "square") ? true : false,
       // oval: (shapeName === "oval") ? true : false,
@@ -63,14 +89,15 @@ class Selector extends Component {
     // this.setState({
     //   clickedTotal: x
     // })
-    
-  }
+  };
 
   render() {
     return (
       <div className="container">
         <div className="navbar">
-          <div>Selected: <span>{this.state.selectedShape}</span></div>
+          <div>
+            Selected: <span>{this.state.selectedShape}</span>
+          </div>
         </div>
         <div className="shape-list">
           <Shape shape="square" selectShape={this.selectShape} />
@@ -96,9 +123,8 @@ class Selector extends Component {
           <div>Star: {this.state.starClicks}</div>
         </div>
       </div>
-    )
+    );
   }
-
 }
 
 export default Selector;
